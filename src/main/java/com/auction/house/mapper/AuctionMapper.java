@@ -37,11 +37,17 @@ public class AuctionMapper implements Mapper<AuctionDto, AuctionEntity> {
 
     public final AuctionEntity toModel(AuctionDto auctionDto) {
 
+        Instant startingTime =
+            auctionDto.getStartingTime() != null ? auctionDto.getStartingTime().toInstant(UTC) : null;
+
+        Instant endTime =
+            auctionDto.getEndTime() != null ? auctionDto.getEndTime().toInstant(UTC) : null;
+
         return AuctionEntity.builder()
             .auctionName(auctionDto.getAuctionName())
             .description(auctionDto.getDescription())
-            .startingTime(auctionDto.getStartingTime().toInstant(UTC))
-            .endTime(auctionDto.getEndTime().toInstant(UTC))
+            .startingTime(startingTime)
+            .endTime(endTime)
             .startPrice(auctionDto.getStartPrice())
             .currentPrice(auctionDto.getCurrentPrice())
             .build();

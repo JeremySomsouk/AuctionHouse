@@ -28,7 +28,9 @@ public class UserBidDto {
     @JsonProperty("user_bid")
     private Float userBid;
 
-    /** these fields are set afterward when the bid action has been done, ignored at input because null */
+    /**
+     * these fields are set afterward when the bid action has been done, ignored at input because null
+     */
 
     @JsonProperty("auction_id")
     @JsonInclude(JsonInclude.Include.NON_NULL)

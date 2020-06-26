@@ -48,18 +48,24 @@ public class AuctionDto {
     private Float currentPrice;
 
 
-    /** these fields are set afterward */
+    /**
+     * these fields are set afterward
+     */
 
     @JsonProperty("auction_id")
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long auctionId;
 
-    /** the auction status is computed using the startingTime and endTime when it is requested */
+    /**
+     * the auction status is computed using the startingTime and endTime when it is requested
+     */
     @JsonProperty("auction_status")
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private AuctionStatusEnum auctionStatus;
 
-    /** the auction winner is set only if the AuctionStatusEnum == FINISHED */
+    /**
+     * the auction winner is set only if the AuctionStatusEnum == FINISHED
+     */
     @JsonProperty("auction_winner")
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String auctionWinner;
